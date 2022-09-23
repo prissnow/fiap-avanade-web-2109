@@ -1,0 +1,50 @@
+header {
+    position: fixed;
+    top: 0; /*como o position é fixed, o top tem que ser 0 para a img ficar lá em cima*/
+    z-index: 100; /*significa que se vc tiver 100 tags no mesmo nível, esse header vai ficar na frente de todas, o número varia de qts elementos vc tem na tela. 100, nesse caso, é só por garantia*/
+    width: 100%; /*largura para pegar a tela inteira*/
+    height: 100px;
+    background-color: #fff;
+    display: flex; /*elementos aparecem em linha*/
+    justify-content: center; 
+    align-items: center;
+    & > nav {             /*isso é o SASS, ele já estiliza as coisas dentro do header*/
+        width: 70%;
+        > ul {
+            margin: 0;
+            display: flex;
+            li {
+                list-style: none;
+                margin-right: 20px;
+                a {
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: #222;
+                    font-family: 'Open Sans';
+                }
+            }
+        }
+    }
+}
+
+section.full-banner {
+    width: 100%;
+    height: 100vh;
+    background: url("../images/c6bank/hero-bg-xs.webp") no-repeat;
+    background-size: cover;
+}
+
+button {
+    width: 290px;
+    line-height: 40px;
+    border-radius: 25px;
+    border: none;
+    text-transform: uppercase;
+}
+
+@media (min-width: 1280px){
+    section.full-banner {
+        background: url("../images/c6bank/hero-bg.webp") no-repeat;
+        background-size: cover;
+    }
+}
