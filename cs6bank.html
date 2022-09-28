@@ -41,13 +41,19 @@
     <script>
         const header = document.querySelector(".top-site");
         const button = document.querySelector(".top-button");
+        const body = document.querySelector("body");
+
         header.style.background = "none";
         button.classList.add("disabled");  //adiciona a class disabled para pegar as características criadas no css
 
         window.addEventListener('scroll', (e)=>{      //quando rolar o mouse na tela faça isso
+            console.log(body.clientHeight); //altura total 2000
+
             if (scrollY < 100) {   //100 significa que rolou 100px no cursor
                 button.classList.add("disabled");
                 header.style.background = "none";
+            } else if (scrollY >= body.clientHeight - 1000){
+                header.style.background = '#222';
             } else {
                 header.style.background = '#fff';
                 button.classList.remove("disabled");
