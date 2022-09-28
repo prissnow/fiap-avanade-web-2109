@@ -1,4 +1,5 @@
 header {
+    transition-duration: 0.5s;
     position: fixed;
     top: 0; /*como o position é fixed, o top tem que ser 0 para a img ficar lá em cima*/
     z-index: 100; /*significa que se vc tiver 100 tags no mesmo nível, esse header vai ficar na frente de todas, o número varia de qts elementos vc tem na tela. 100, nesse caso, é só por garantia*/
@@ -32,9 +33,52 @@ section.full-banner {
     height: 100vh;
     background: url("../images/c6bank/hero-bg-xs.webp") no-repeat;
     background-size: cover;
+    > .destak {
+        width: 40%;
+        height: 60vh;
+        position: absolute;
+        bottom: 0;
+        left: 15%;
+        > h1 {
+            font-weight: 300;
+            font-size: 5rem;
+            margin: 0;  
+            line-height: 1em;
+            margin-bottom: 20px;
+        }
+        > h2, h3 {
+            font-weight: 300;
+            margin: 0;            
+        }
+        h3 {
+            width: 65%;
+            background: rgba(36, 36, 36, 0.35); //rgba é pra dar transparência
+            color: #eee;
+            font-weight: normal;
+            line-height: 3em;
+            font-size: 0.9em;
+            padding: 0 1%;
+            border-radius: 25px;
+        }
+    }
+}
+
+::selection {   //pseudo-seletor, qd a pessoa seleciona com o mouse
+    background: #ffe45c;    
+    color: #242424;
+}
+
+button.disabled {
+    background: none;
+    border: solid 0.5px rgba(36, 36, 36, 0.8);
+}
+
+button.disabled:hover {
+    background: rgba(36, 36, 36, 0.2);
 }
 
 button {
+    background: linear-gradient(150deg, #ffe45c 0%, #ffc900 100%); //linear gradient nunca pode ser usado com background-image, só background | primeiro parametro é opcional, se vc não coloca, vai da esquerda pra direita - no caso, 150deg, ele vai da diagonal com 0% do amarelo claro e vai até 100% do ouro forte
     width: 290px;
     line-height: 40px;
     border-radius: 25px;
@@ -42,9 +86,36 @@ button {
     text-transform: uppercase;
 }
 
+button:hover {
+    background: linear-gradient(150deg, #ffe668 0%, #ffdc5f 100%);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+//span e tag "a" são elementos de linha ou de texto
+//para formatar, cores, bordas e tamanho é necessário transformá-lo em um elemento de bloco, para isso utilizamos a propriedade display: block
+.destak h3 > span {
+    display: inline-block;
+    line-height: 1.6em;
+    width: fit-content;
+    background: #006d8f;
+    border-radius: 25px;
+    padding: 0 1%;
+    font-weight: bold;
+}
+
 @media (min-width: 1280px){
     section.full-banner {
         background: url("../images/c6bank/hero-bg.webp") no-repeat;
         background-size: cover;
     }
+}
+
+.jss4 .jss6 {
+    fill: hsla(0,0%, 14%, 1);        
+}
+
+.jss12 {
+    width: auto;
+    height: 24px;
 }
