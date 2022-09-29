@@ -63,6 +63,8 @@ section.full-banner {
     }
 }
 
+
+
 ::selection {   //pseudo-seletor, qd a pessoa seleciona com o mouse
     background: #ffe45c;    
     color: #242424;
@@ -118,4 +120,8 @@ button:hover {
 .jss12 {
     width: auto;
     height: 24px;
+}
+
+.footer {
+    background-color: #222;
 }

@@ -36,13 +36,13 @@
 
     </section>
     <footer>
-        <div></div>
+        
     </footer>
     <script>
         const header = document.querySelector(".top-site");
         const button = document.querySelector(".top-button");
         const body = document.querySelector("body");
-
+        
         header.style.background = "none";
         button.classList.add("disabled");  //adiciona a class disabled para pegar as características criadas no css
 
@@ -53,7 +53,8 @@
                 button.classList.add("disabled");
                 header.style.background = "none";
             } else if (scrollY >= body.clientHeight - 1000){
-                header.style.background = '#222';
+                header.style.background = '#222';  
+                body.style.background = 'black'                   
             } else {
                 header.style.background = '#fff';
                 button.classList.remove("disabled");
